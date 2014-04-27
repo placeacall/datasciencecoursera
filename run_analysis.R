@@ -1,3 +1,5 @@
+##load reshape2 library
+library(reshape2)
 
 ##get a list of all feautures
 features <- read.table("features.txt", header=FALSE, stringsAsFactors=FALSE)
@@ -17,7 +19,7 @@ names(train.subject) <- "SubjectID"
 ##load the training data set
 train.x <- read.table("./train/X_train.txt", header=FALSE)
 
-##Combine training set
+##Combine all data sets related to the training set
 train <- cbind(train.subject, y.train, train.x)
 
 ##load the y testing predictor value
@@ -54,8 +56,6 @@ data.features <- cbind(data[c(1, 3)], data.features)
 ##Clean up feature names
 names(data.features) <- gsub("\\(\\)", "", gsub("-", ".", names(data.features)))
 
-##load reshape2 library
-library(reshape2)
 
 ##5 Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 ##Using melt and dcast to aggregate data set
