@@ -1,0 +1,10 @@
+
+par(mfrow=c(2, 2), mar=c(4, 4, 2 , 1))
+plot(power$completeDate, power$Global_active_power, type="l", ylab="Global Active Power", xlab="")
+plot(power$completeDate, power$Voltage, type="l", xlab="datetime", ylab="Voltage")
+plot(power$completeDate, power$Sub_metering_1, type="n", ylab="Energy Sub Metering", xlab="")
+lines(power$completeDate, power$Sub_metering_1, col="black")
+lines(power$completeDate, power$Sub_metering_2, col="red")
+lines(power$completeDate, power$Sub_metering_3, col="blue")
+legend("topright",  lty=1, bty="n", col=c("black", "blue", "red"), cex=0.7, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+plot(power$completeDate, power$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
